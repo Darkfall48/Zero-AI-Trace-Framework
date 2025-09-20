@@ -1,12 +1,232 @@
 # 🎯 Zero-AI-Trace Framework
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Version](https://img.shields.io/badge/Version-1.0.0-green.svg)](https://github.com/Darkfall48/Zero-AI-Trace-Framework)
+[![Version](https://img.shields.io/badge/Version-1.0.1-green.svg)](https://github.com/Darkfall48/Zero-AI-Trace-Framework)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/Darkfall48/Zero-AI-Trace-Framework/blob/main/CONTRIBUTING.md)
 
-**A strict framework for controlling ChatGPT and other LLMs to produce authentic and undetectable content**
+**A comprehensive framework for controlling LLMs to produce authentic, transparent, and undetectable content**
 
-[Installation](#-installation) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Examples](#-examples) • [Contributing](#-contributing)
+[📚 **Full Documentation (Wiki)**](https://github.com/Darkfall48/Zero-AI-Trace-Framework/wiki) • [🚀 Quick Start](#-quick-start) • [💾 Installation](#-installation) • [🛠️ CLI Tools](#-cli-tools)
+
+---
+
+## 🎯 Overview
+
+The **Zero-AI-Trace Framework** is a professional-grade system for controlling ChatGPT and other LLMs to produce:
+
+- **🔍 Verified and transparent content** with uncertainty labeling
+- **🚫 Natural, human-like writing** that avoids AI detection
+- **💫 Authentic responses** with human imperfections and rhythm
+
+Perfect for developers, content creators, researchers, and anyone who needs reliable, natural AI outputs.
+
+## ✨ Key Features
+
+- ✅ **Uncertainty Verification**: Automatic labeling of unverifiable claims
+- 🎭 **Style Humanization**: Natural writing patterns and rhythm variation
+- 🔒 **Anti-Detection**: Breaks common AI fingerprints and patterns
+- 🛠️ **Self-Correction**: Built-in protocols for fixing mistakes
+- 📦 **Professional CLI**: Complete command-line interface
+- 🔗 **API Integration**: Ready-to-use templates for all major platforms
+- 📚 **Comprehensive Docs**: Complete wiki with guides and examples
+- 🧪 **Automated Testing**: Validation tools and quality checks
+
+## 💾 Installation
+
+### Option 1: NPM Package (Recommended)
+
+```bash
+# Install globally for CLI access
+npm install -g zero-ai-trace-framework
+
+# Verify installation
+zero-ai-trace --version
+```
+
+### Option 2: Quick Copy-Paste
+
+Copy this prompt into any LLM interface:
+
+```text
+Be honest, not agreeable. Never present speculation as fact. If unverifiable, say: "I cannot verify this," "I do not have access to that information," or "My knowledge base does not contain that." Prefix uncertain content with [Inference], [Speculation], or [Unverified], and if any part is unverified, label the whole response. Do not paraphrase input unless asked. Claims with words like Prevent, Guarantee, Will never, Fixes, Eliminates, Ensures must be labeled. LLM behavior claims must carry [Inference] or [Unverified] and include "based on observed patterns." If labeling is missed, issue a correction. Always ask if context is missing; never fabricate. Style must avoid puffery, stock phrasing, or sterile AI polish. Use concrete facts, natural flow, varied sentence rhythm, and allow slight irregularities: contractions, mild subjectivity, human hedging, and uneven lengths. Break symmetry to avoid AI fingerprints. If both labeling is missed and AI-sounding filler appears, issue dual corrections: one for labeling, one for style.
+```
+
+## 🚀 Quick Start
+
+### 1. Basic Setup
+
+```bash
+# Install and validate
+npm install -g zero-ai-trace-framework
+zero-ai-trace validate
+
+# Get the core prompt
+zero-ai-trace show
+```
+
+### 2. Test with Any LLM
+
+Ask: **"What will the stock market do tomorrow?"**
+
+**✅ Expected Response:**
+
+```text
+[Unverified] I can't predict what the stock market will do tomorrow. Market movements depend on countless factors that aren't predictable. Check financial news for current analysis, but remember even expert predictions are often wrong.
+```
+
+**❌ Typical AI Response:**
+
+```text
+I cannot provide financial advice or predict market movements. However, I recommend consulting qualified financial advisors and conducting thorough research before making investment decisions.
+```
+
+### 3. Integration Examples
+
+#### ChatGPT Custom Instructions
+
+Paste the framework prompt in Settings → Custom Instructions
+
+#### OpenAI API
+
+```javascript
+const response = await openai.chat.completions.create({
+  model: 'gpt-4',
+  messages: [
+    { role: 'system', content: ZERO_AI_TRACE_PROMPT },
+    { role: 'user', content: userMessage },
+  ],
+});
+```
+
+#### Anthropic Claude
+
+```javascript
+const response = await anthropic.messages.create({
+  model: 'claude-3-sonnet-20240229',
+  system: ZERO_AI_TRACE_PROMPT,
+  messages: [{ role: 'user', content: userMessage }],
+});
+```
+
+## 🛠️ CLI Tools
+
+### Available Commands
+
+```bash
+zero-ai-trace validate    # Test framework setup
+zero-ai-trace show        # Display current prompt
+zero-ai-trace test        # Run automated tests
+zero-ai-trace build       # Generate variants
+zero-ai-trace init <name> # Create new project
+zero-ai-trace info        # Framework information
+```
+
+### Validation Example
+
+```bash
+$ zero-ai-trace test
+✅ Uncertainty handling: PASS
+✅ Natural style: PASS
+✅ Correction protocol: PASS
+✅ Labeling accuracy: PASS
+
+Framework validation: 13/13 tests passed
+```
+
+## 📚 Complete Documentation
+
+### 📖 **[Wiki Home](https://github.com/Darkfall48/Zero-AI-Trace-Framework/wiki)**
+
+Complete documentation, guides, and examples
+
+### Key Wiki Pages:
+
+- 🚀 **[Getting Started](https://github.com/Darkfall48/Zero-AI-Trace-Framework/wiki/Getting-Started)** - Complete tutorial with testing
+- 🔧 **[Advanced Usage](https://github.com/Darkfall48/Zero-AI-Trace-Framework/wiki/Advanced-Usage)** - Optimization and troubleshooting
+- 🔗 **[Integration Guide](https://github.com/Darkfall48/Zero-AI-Trace-Framework/wiki/Integration-Guide)** - API and platform examples
+- 🛠️ **[Templates & Snippets](https://github.com/Darkfall48/Zero-AI-Trace-Framework/wiki/Templates-and-Snippets)** - Ready-to-use code
+- 🎯 **[Core Principles](https://github.com/Darkfall48/Zero-AI-Trace-Framework/wiki/Core-Principles)** - Framework fundamentals
+- 🖥️ **[CLI Commands](https://github.com/Darkfall48/Zero-AI-Trace-Framework/wiki/CLI-Commands)** - Command reference
+- ❓ **[FAQ](https://github.com/Darkfall48/Zero-AI-Trace-Framework/wiki/FAQ)** - Common questions
+
+## 🎯 Core Benefits
+
+### Transparency & Accuracy
+
+- **Never** presents speculation as fact
+- **Labels** uncertain content with `[Unverified]`, `[Inference]`, `[Speculation]`
+- **Admits** knowledge limitations clearly
+
+### Natural Writing Style
+
+- **Avoids** robotic AI patterns ("Furthermore", "Moreover", "In conclusion")
+- **Uses** contractions and varied sentence rhythm
+- **Includes** human imperfections and casual markers
+
+### Professional Quality
+
+- **Self-correcting** when mistakes are detected
+- **Consistent** application across all interactions
+- **Customizable** for different domains and use cases
+
+## 🧪 Example Transformations
+
+### Before (Typical AI)
+
+```text
+I'd be happy to help you optimize your website's performance! Here are several comprehensive strategies that will significantly improve your loading times:
+
+1. Implement robust caching mechanisms to enhance user experience
+2. Furthermore, compress your images to reduce bandwidth utilization
+3. Additionally, minify CSS and JavaScript files for optimal performance
+4. In conclusion, these methods will ensure exceptional results
+```
+
+### After (Zero-AI-Trace)
+
+```text
+Few things make a real difference for site speed: enable browser caching, compress images (biggest impact for most sites), and minify CSS/JS files. CDN helps if you've got global users.
+
+[Inference] These approaches usually work well based on what I've seen, but your specific situation might need different priorities. What kind of site are you working with?
+```
+
+## 🔗 Quick Links
+
+- 📚 **[Complete Wiki Documentation](https://github.com/Darkfall48/Zero-AI-Trace-Framework/wiki)**
+- 🚀 **[Quick Start Tutorial](https://github.com/Darkfall48/Zero-AI-Trace-Framework/wiki/Getting-Started)**
+- 🔧 **[API Integration Examples](https://github.com/Darkfall48/Zero-AI-Trace-Framework/wiki/Integration-Guide)**
+- 🛠️ **[Code Templates](https://github.com/Darkfall48/Zero-AI-Trace-Framework/wiki/Templates-and-Snippets)**
+- 🔒 **[Security Policy](SECURITY.md)**
+- 🤝 **[Contributing Guidelines](CONTRIBUTING.md)**
+- 📄 **[License](LICENSE)**
+
+## 🤝 Contributing
+
+We welcome contributions! See our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Ways to Contribute:
+
+- 🐛 **Bug Reports**: Issues with framework behavior
+- 💡 **Feature Requests**: New capabilities or improvements
+- 📚 **Documentation**: Examples, guides, translations
+- 🧪 **Testing**: Validation with different LLMs
+- 🔧 **Integration**: Templates for new platforms
+
+## 📜 License
+
+This project is licensed under the **GNU General Public License v3.0**.  
+See [LICENSE](LICENSE) for complete details.
+
+---
+
+<div align="center">
+
+**🎯 Zero-AI-Trace Framework v2.0.0**  
+_Authenticity • Transparency • Undetectability_
+
+[⭐ Star this project](https://github.com/Darkfall48/Zero-AI-Trace-Framework) • [📚 Read the Wiki](https://github.com/Darkfall48/Zero-AI-Trace-Framework/wiki) • [🐛 Report Issues](https://github.com/Darkfall48/Zero-AI-Trace-Framework/issues)
+
+</div>
 
 ---
 

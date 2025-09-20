@@ -1,6 +1,23 @@
-# 🚀 Getting Started Tutorial: Zero-AI-Trace Framework
+# 🚀 Getting Started - Quick Start Guide
 
-This tutorial will guide you through implementing and using the Zero-AI-Trace Framework step by step.
+Welcome! This guide will get you using the Zero-AI-Trace Framework in under 5 minutes.
+
+## 📦 Quick Installation
+
+### Option 1: NPM Global (Recommended)
+
+```bash
+npm install -g zero-ai-trace-framework
+```
+
+### Option 2: Direct Injection
+
+Copy and paste this prompt into your ChatGPT or LLM interface:
+
+```text
+# 🚀 Getting Started
+
+Welcome to the Zero-AI-Trace Framework! This comprehensive tutorial will guide you through implementing and using the framework step by step.
 
 ## 📋 Prerequisites
 
@@ -17,7 +34,7 @@ By the end of this tutorial, you'll:
 3. Validate that it's working correctly
 4. Know how to troubleshoot common issues
 
-## Step 1: Understanding the Framework
+## Step 1: Understanding the Problem
 
 ### What Makes Responses "AI-like"?
 
@@ -26,12 +43,14 @@ Before we start, let's identify common AI patterns:
 **Typical AI Response:**
 
 ```
+
 I'd be happy to help you with that! Here are several comprehensive strategies that will significantly improve your website's performance:
 
 1. Implement caching mechanisms to optimize loading times
 2. Furthermore, compress your images to reduce bandwidth usage
 3. Additionally, minify your CSS and JavaScript files
 4. In conclusion, these methods will ensure optimal user experience
+
 ```
 
 **Problems with this response:**
@@ -57,8 +76,10 @@ The framework addresses each issue:
 Copy this prompt exactly:
 
 ```
+
 Be honest, not agreeable. Never present speculation as fact. If unverifiable, say: "I cannot verify this," "I do not have access to that information," or "My knowledge base does not contain that." Prefix uncertain content with [Inference], [Speculation], or [Unverified], and if any part is unverified, label the whole response. Do not paraphrase input unless asked. Claims with words like Prevent, Guarantee, Will never, Fixes, Eliminates, Ensures must be labeled. LLM behavior claims must carry [Inference] or [Unverified] and include "based on observed patterns." If labeling is missed, issue a correction. Always ask if context is missing; never fabricate. Style must avoid puffery, stock phrasing, or sterile AI polish. Use concrete facts, natural flow, varied sentence rhythm, and allow slight irregularities: contractions, mild subjectivity, human hedging, and uneven lengths. Break symmetry to avoid AI fingerprints. If both labeling is missed and AI-sounding filler appears, issue dual corrections: one for labeling, one for style.
-```
+
+````
 
 ### Implementation Methods
 
@@ -87,7 +108,7 @@ const response = await openai.chat.completions.create({
   model: 'gpt-4',
   messages: [systemMessage, userMessage],
 });
-```
+````
 
 ## Step 3: Testing Your Implementation
 
@@ -202,6 +223,21 @@ Once the basic framework works, you can add domain-specific instructions:
 [Core Framework] + Creative emphasis: Maintain natural expression and creative voice while being transparent about creative choices and limitations.
 ```
 
+### Using the CLI Tool
+
+If you have the Zero-AI-Trace CLI installed:
+
+```bash
+# Test your current LLM setup
+zero-ai-trace test
+
+# Validate a specific response
+zero-ai-trace validate "your LLM response here"
+
+# Get framework information
+zero-ai-trace info
+```
+
 ### Ongoing Optimization
 
 1. **Monitor Performance**: Pay attention to whether the framework effects fade over long conversations
@@ -232,19 +268,154 @@ You'll know the framework is working when:
 4. **Style is natural**: Contractions, varied rhythm, authentic voice
 5. **Corrections happen**: LLM catches and fixes its own mistakes
 
-## Next Steps
+## 📚 Next Steps
 
 Once you're comfortable with basic usage:
 
-1. Read the [Advanced Guide](advanced-guide.md) for optimization techniques
-2. Experiment with domain-specific variations
-3. Set up automated testing if using APIs
-4. Share your results and improvements with the community
+1. Read the [Advanced Usage Guide](Advanced-Usage.md) for optimization techniques
+2. Explore the [Integration Guide](Integration-Guide.md) for API implementations
+3. Review [CLI Commands](CLI-Commands.md) for automated testing
+4. Check out [Core Principles](Core-Principles.md) for deeper understanding
+5. Set up automated testing if using APIs
+6. Share your results and improvements with the community
 
-## Need Help?
+## ❓ Need Help?
 
-- Check the main [README](../README.md) for additional examples
+- Check the [FAQ](FAQ.md) for common questions
+- Review [troubleshooting tips](Advanced-Usage.md#troubleshooting)
+- Use the CLI `zero-ai-trace test` command for validation
+- Look at the main [README](../README.md) for additional examples
 - Review [CONTRIBUTING](../CONTRIBUTING.md) to report issues or suggest improvements
-- Look at the [FAQ section](../README.md#faq) for common questions
 
 Remember: The framework works best when you understand its principles, not just the mechanics. Focus on honesty, transparency, and natural communication, and the technical details will follow.
+
+````
+
+## ⚡ First Tests
+
+### 1. Verify Installation
+
+```bash
+zero-ai-trace --version
+````
+
+### 2. Get the Prompt
+
+```bash
+zero-ai-trace show
+```
+
+### 3. Validate Configuration
+
+```bash
+zero-ai-trace validate
+```
+
+### 4. Test with Your LLM
+
+Ask an uncertain question like:
+
+- "What will the weather be tomorrow?"
+- "Does this strategy guarantee success?"
+
+**✅ Expected Response:** Should contain `[Unverified]` or "I cannot verify"
+
+## 🎯 Validation Test
+
+### ❌ Without the framework
+
+```text
+This method guarantees excellent results and significantly improves performance in all possible contexts.
+```
+
+### ✅ With the framework
+
+```text
+[Inference] This method seems to work well from what I observe, but it totally depends on your specific context.
+```
+
+## 🔧 Essential Commands
+
+| Command                     | Description              |
+| --------------------------- | ------------------------ |
+| `zero-ai-trace show`        | Display current prompt   |
+| `zero-ai-trace validate`    | Interactive validation   |
+| `zero-ai-trace test`        | Run automated tests      |
+| `zero-ai-trace build`       | Generate variants        |
+| `zero-ai-trace init <name>` | Create new project       |
+| `zero-ai-trace info`        | Framework info and stats |
+
+## 🎬 Quick Use Cases
+
+### For ChatGPT Web
+
+1. Copy the compact prompt (see Option 2)
+2. Paste it at the beginning of your conversation
+3. Ask your questions normally
+
+### For ChatGPT API
+
+```javascript
+const systemPrompt = await getZeroAITracePrompt();
+// Use systemPrompt in your API calls
+```
+
+### For Other LLMs
+
+The framework works with Claude, Gemini, and other major models.
+
+## 🚨 Success Indicators
+
+The framework is working when you see:
+
+✅ **Proper Labeling**
+
+- `[Unverified]` on uncertain claims
+- `[Inference]` on deductions
+- `[Speculation]` on hypotheses
+
+✅ **Natural Style**
+
+- Contractions ("it's", "I've")
+- Variable sentence length
+- Less "corporate" phrasing
+
+✅ **Transparency**
+
+- "I cannot verify"
+- "From what I observe"
+- Requests for clarification
+
+## ❓ Common Issues
+
+### LLM Ignores the Framework
+
+- **Solution**: Repeat the prompt or rephrase the instruction
+- **Cause**: Model may "forget" in long conversations
+
+### Too Much Labeling
+
+- **Normal**: Better safe than sorry
+- **Adjustment**: See [[Advanced Guide|advanced guide]] for optimizations
+
+### Style Still Too "AI-like"
+
+- **Solution**: Emphasize concrete examples
+- **Reminder**: "Avoid corporate style, be more direct"
+
+## 📚 Next Steps
+
+1. **Deep Dive**: Read the [[Tutorial|complete tutorial]]
+2. **Integration**: See [[ChatGPT Integration|ChatGPT integration]]
+3. **Optimization**: Check the [[Advanced Guide|advanced guide]]
+4. **Templates**: Explore [[Templates|ready-to-use templates]]
+
+## 🤝 Need Help?
+
+- 📖 [[FAQ|Frequently Asked Questions]]
+- 🔧 [[Troubleshooting|Troubleshooting Guide]]
+- 💬 [[Support|Get Help]]
+
+---
+
+_Estimated time to master the basics: 15-30 minutes_

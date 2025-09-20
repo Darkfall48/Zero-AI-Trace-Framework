@@ -1,6 +1,6 @@
-# 🔗 Integration Examples: Zero-AI-Trace Framework
+# 🔗 Integration Guide
 
-This document provides practical examples for integrating the Zero-AI-Trace Framework into various platforms and applications.
+This guide provides practical examples and patterns for integrating the Zero-AI-Trace Framework into various platforms, applications, and development workflows.
 
 ## Platform-Specific Integrations
 
@@ -219,7 +219,7 @@ const response = await claudeWithFramework(
 console.log(response);
 ```
 
-### Google Bard/Gemini Integration
+### Google Gemini Integration
 
 ```python
 import google.generativeai as genai
@@ -231,9 +231,7 @@ ZERO_AI_TRACE_PROMPT = """Be honest, not agreeable. Never present speculation as
 
 def gemini_with_framework(user_message):
     model = genai.GenerativeModel('gemini-pro')
-
     full_prompt = f"{ZERO_AI_TRACE_PROMPT}\n\nUser question: {user_message}"
-
     response = model.generate_content(full_prompt)
     return response.text
 
@@ -694,12 +692,82 @@ function ChatComponent() {
 }
 ```
 
-These integration examples provide practical starting points for implementing the Zero-AI-Trace Framework in real applications. Remember to:
+## Best Practices for Integration
 
-1. **Test thoroughly** with your specific use cases
-2. **Monitor response quality** and adjust validation rules as needed
-3. **Keep the core framework prompt updated** with the latest version
-4. **Document any customizations** you make for your specific domain
-5. **Implement proper error handling** for production use
+### 1. Error Handling
 
-For additional help or to contribute new integration examples, please see the [Contributing Guide](../CONTRIBUTING.md).
+Always implement robust error handling for API calls:
+
+```javascript
+try {
+  const result = await client.chat(message, options);
+  return result;
+} catch (error) {
+  console.error('AI client error:', error);
+  return { error: 'Failed to process request', fallback: true };
+}
+```
+
+### 2. Rate Limiting
+
+Implement appropriate rate limiting for production use:
+
+```javascript
+const rateLimit = require('express-rate-limit');
+
+const aiChatLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: 'Too many AI requests from this IP',
+});
+
+app.use('/api/ai-chat', aiChatLimiter);
+```
+
+### 3. Response Caching
+
+Cache responses when appropriate to reduce API costs:
+
+```javascript
+const cache = new Map();
+
+async function cachedChat(message, options = {}) {
+  const cacheKey = JSON.stringify({ message, options });
+
+  if (cache.has(cacheKey)) {
+    return cache.get(cacheKey);
+  }
+
+  const result = await client.chat(message, options);
+  cache.set(cacheKey, result);
+
+  return result;
+}
+```
+
+### 4. Monitoring and Analytics
+
+Track usage and performance:
+
+```javascript
+const analytics = {
+  logRequest: (message, options, result, duration) => {
+    console.log({
+      timestamp: new Date().toISOString(),
+      messageLength: message.length,
+      domain: options.domain,
+      validationScore: result.validation?.score,
+      duration,
+    });
+  },
+};
+
+// Use in your API endpoints
+const startTime = Date.now();
+const result = await client.chat(message, options);
+const duration = Date.now() - startTime;
+
+analytics.logRequest(message, options, result, duration);
+```
+
+These integration examples provide practical starting points for implementing the Zero-AI-Trace Framework in real applications. Remember to test thoroughly with your specific use cases and adjust validation rules as needed for your domain.
