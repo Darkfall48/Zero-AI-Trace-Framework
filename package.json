@@ -1,0 +1,63 @@
+{
+  "name": "zero-ai-trace-framework",
+  "version": "1.0.0",
+  "description": "A strict framework for controlling ChatGPT and other LLMs to produce authentic and undetectable content",
+  "main": "src/framework.js",
+  "bin": {
+    "zero-ai-trace": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "node tests/run-tests.js",
+    "validate": "node scripts/validate-framework.js",
+    "benchmark": "node scripts/benchmark.js",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "build": "node scripts/build.js",
+    "docs": "node scripts/generate-docs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darkfall48/Zero-AI-Trace-Framework.git"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "chatgpt",
+    "claude",
+    "prompt-engineering",
+    "anti-detection",
+    "humanization",
+    "framework",
+    "prompt",
+    "natural-language"
+  ],
+  "author": "Darkfall48",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Darkfall48/Zero-AI-Trace-Framework/issues"
+  },
+  "homepage": "https://github.com/Darkfall48/Zero-AI-Trace-Framework#readme",
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "prettier": "^3.0.3",
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.0.0",
+    "fs-extra": "^11.1.1",
+    "ora": "^5.4.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "src/",
+    "templates/",
+    "scripts/",
+    "README.md",
+    "README_FR.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ]
+}
