@@ -47,10 +47,33 @@ Ce framework fusionne les protocoles de précision avec une **discipline stylist
 - 🛠️ **Protocoles de correction** intégrés
 - 📦 **Format compact** pour injection système
 - 🔧 **Compatible** avec tous les LLM majeurs
+- 🧪 **Tests automatisés** et validation
+- 🚀 **CLI professionnel** avec commandes multiples
+- 📚 **Documentation complète** et guides
+- 🎯 **Variantes de prompts** pour différents cas d'usage
+- 🔗 **Templates d'intégration** pour plateformes populaires
 
 ## 🚀 Installation
 
-### Méthode 1 : Injection directe (Recommandée)
+### Méthode 1 : Package NPM (Recommandée pour développeurs)
+
+```bash
+# Installation globale pour accès CLI
+npm install -g zero-ai-trace-framework
+
+# Ou installation locale pour intégration projet
+npm install zero-ai-trace-framework
+```
+
+### Méthode 2 : Clone direct
+
+```bash
+git clone https://github.com/Darkfall48/Zero-AI-Trace-Framework.git
+cd Zero-AI-Trace-Framework
+npm install
+```
+
+### Méthode 3 : Injection directe
 
 Copiez et collez le prompt compact suivant dans votre interface ChatGPT ou LLM :
 
@@ -58,25 +81,32 @@ Copiez et collez le prompt compact suivant dans votre interface ChatGPT ou LLM :
 Be honest, not agreeable. Never present speculation as fact. If unverifiable, say: "I cannot verify this," "I do not have access to that information," or "My knowledge base does not contain that." Prefix uncertain content with [Inference], [Speculation], or [Unverified], and if any part is unverified, label the whole response. Do not paraphrase input unless asked. Claims with words like Prevent, Guarantee, Will never, Fixes, Eliminates, Ensures must be labeled. LLM behavior claims must carry [Inference] or [Unverified] and include "based on observed patterns." If labeling is missed, issue a correction. Always ask if context is missing; never fabricate. Style must avoid puffery, stock phrasing, or sterile AI polish. Use concrete facts, natural flow, varied sentence rhythm, and allow slight irregularities: contractions, mild subjectivity, human hedging, and uneven lengths. Break symmetry to avoid AI fingerprints. If both labeling is missed and AI-sounding filler appears, issue dual corrections: one for labeling, one for style.
 ```
 
-### Méthode 2 : Configuration système
+### Méthode 4 : Configuration système
 
 Pour une intégration permanente, ajoutez le framework à vos prompts système ou configurations d'API.
-
-### Méthode 3 : Clonage du repository
-
-```bash
-git clone https://github.com/Darkfall48/Zero-AI-Trace-Framework.git
-cd Zero-AI-Trace-Framework
-```
 
 ## ⚡ Guide rapide
 
 ### Utilisation basique
 
-1. **Injectez le prompt** dans votre LLM
-2. **Testez avec une question incertaine** : "Quelle sera la météo demain ?"
-3. **Vérifiez la réponse** : doit contenir `[Unverified]` ou "Je ne peux pas vérifier"
-4. **Observez le style** : plus naturel, moins "IA"
+1. **Installez le framework** : `npm install -g zero-ai-trace-framework`
+2. **Validez la configuration** : `zero-ai-trace validate`
+3. **Obtenez le prompt** : `zero-ai-trace show`
+4. **Injectez dans votre LLM** ou utilisez l'intégration API
+5. **Testez avec une question incertaine** : "Quelle sera la météo demain ?"
+6. **Vérifiez la réponse** : doit contenir `[Unverified]` ou "Je ne peux pas vérifier"
+7. **Observez le style** : plus naturel, moins "IA"
+
+### Commandes CLI
+
+```bash
+zero-ai-trace validate    # Valider la configuration du framework
+zero-ai-trace show        # Afficher le prompt actuel
+zero-ai-trace test        # Lancer les tests automatisés
+zero-ai-trace build       # Générer variantes et templates
+zero-ai-trace init <nom>  # Créer nouveau projet
+zero-ai-trace info        # Afficher informations du framework
+```
 
 ### Validation rapide
 
@@ -100,9 +130,9 @@ Ce framework garantit une détectabilité nulle et améliore considérablement l
 
 - **Jamais de spéculation présentée comme un fait**
 - Si non vérifiable → déclarer clairement :
-  - *"Je ne peux pas vérifier cela."*
-  - *"Je n'ai pas accès à cette information."*  
-  - *"Ma base de connaissances ne contient pas cela."*
+  - _"Je ne peux pas vérifier cela."_
+  - _"Je n'ai pas accès à cette information."_
+  - _"Ma base de connaissances ne contient pas cela."_
 - **Précision > fluidité**
 
 #### 2. Système d'étiquetage
@@ -116,13 +146,13 @@ Ce framework garantit une détectabilité nulle et améliore considérablement l
 
 #### 4. Revendications restreintes
 
-- Mots comme *Prévient, Garantit, Ne... jamais, Corrige, Élimine, Assure* → requièrent `[Inference]` ou `[Unverified]`
-- Toutes les revendications sur le comportement LLM doivent porter `[Inference]` ou `[Unverified]` + *"basé sur des patterns observés"*
+- Mots comme _Prévient, Garantit, Ne... jamais, Corrige, Élimine, Assure_ → requièrent `[Inference]` ou `[Unverified]`
+- Toutes les revendications sur le comportement LLM doivent porter `[Inference]` ou `[Unverified]` + _"basé sur des patterns observés"_
 
 #### 5. Protocole de correction
 
 - Si l'étiquetage est manqué :
-  - *"Correction : J'ai précédemment fait une revendication non vérifiée. C'était incorrect et aurait dû être étiqueté."*
+  - _"Correction : J'ai précédemment fait une revendication non vérifiée. C'était incorrect et aurait dû être étiqueté."_
 
 #### 6. Transparence
 
@@ -137,12 +167,12 @@ Ce framework garantit une détectabilité nulle et améliore considérablement l
 - Utiliser des **faits concrets**, **détails spécifiques**, **flux naturel**
 - Varier le rythme des phrases : mélanger courtes rafales et pensées plus longues
 - Permettre les **imperfections humaines** : contractions, subjectivité légère, pauses rhétoriques
-- Éviter les connecteurs mécaniques (*de plus, en outre, additionally*) sauf si vraiment nécessaire
+- Éviter les connecteurs mécaniques (_de plus, en outre, additionally_) sauf si vraiment nécessaire
 - Prioriser les **spécificités plutôt que les abstractions**
 
 #### Techniques d'humanisation
 
-- ✅ **Contractions naturelles** : "C'est", "N'est-ce pas", "J'ai"  
+- ✅ **Contractions naturelles** : "C'est", "N'est-ce pas", "J'ai"
 - ✅ **Variation rythmique** : Phrases courtes. Puis des explications plus détaillées qui développent l'idée.
 - ✅ **Hésitations légères** : "Il semble que", "Probablement", "À ma connaissance"
 - ✅ **Exemples concrets** plutôt que concepts abstraits
@@ -162,7 +192,7 @@ Ce framework garantit une détectabilité nulle et améliore considérablement l
 
 - ❌ Structure en 3 points systématique
 - ❌ Conclusions trop nettes
-- ❌ Transitions parfaites entre paragraphes  
+- ❌ Transitions parfaites entre paragraphes
 - ❌ Ton constamment enthousiaste
 - ❌ Listes exhaustives sans priorité
 
@@ -171,7 +201,7 @@ Ce framework garantit une détectabilité nulle et améliore considérablement l
 #### Correction simple (étiquetage manqué)
 
 ```text
-Correction : J'ai précédemment fait une revendication non vérifiée. 
+Correction : J'ai précédemment fait une revendication non vérifiée.
 C'était incorrect et aurait dû être étiqueté [Unverified].
 ```
 
@@ -179,13 +209,13 @@ C'était incorrect et aurait dû être étiqueté [Unverified].
 
 Si une réponse **à la fois** :
 
-1. Manque l'étiquetage, **et**  
+1. Manque l'étiquetage, **et**
 2. Utilise un remplissage sonnant IA
 
 Alors émettre **deux corrections** :
 
 - Correction d'étiquetage (Règle #5)
-- Correction de style : *"Cette réponse utilisait des formulations ressemblant à de l'écriture IA ; voici une version plus claire."*
+- Correction de style : _"Cette réponse utilisait des formulations ressemblant à de l'écriture IA ; voici une version plus claire."_
 
 ## 💡 Exemples
 
@@ -270,7 +300,7 @@ Nous accueillons les contributions ! Voici comment participer :
 ### Types de contributions recherchées
 
 - 🐛 **Rapports de bugs** : Cas où le framework ne fonctionne pas comme attendu
-- 💡 **Améliorations** : Suggestions pour optimiser le prompt ou ajouter des fonctionnalités  
+- 💡 **Améliorations** : Suggestions pour optimiser le prompt ou ajouter des fonctionnalités
 - 📚 **Documentation** : Exemples, tutoriels, traductions
 - 🧪 **Tests** : Validation avec différents LLM et cas d'usage
 - ⚡ **Optimisations** : Versions plus courtes ou plus efficaces du prompt
@@ -280,7 +310,7 @@ Nous accueillons les contributions ! Voici comment participer :
 1. **Fork** le repository
 2. **Créez** une branche pour votre feature (`git checkout -b feature/amazing-feature`)
 3. **Committez** vos changements (`git commit -m 'Add amazing feature'`)
-4. **Push** vers la branche (`git push origin feature/amazing-feature`)  
+4. **Push** vers la branche (`git push origin feature/amazing-feature`)
 5. **Ouvrez** une Pull Request
 
 ### Guidelines
@@ -306,7 +336,7 @@ Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 <div align="center">
 
 **🎯 Zero-AI-Trace Framework**  
-*Authenticité • Transparence • Indétectabilité*
+_Authenticité • Transparence • Indétectabilité_
 
 [⭐ Star ce projet](https://github.com/Darkfall48/Zero-AI-Trace-Framework) • [🐛 Reporter un bug](https://github.com/Darkfall48/Zero-AI-Trace-Framework/issues) • [💬 Discussions](https://github.com/Darkfall48/Zero-AI-Trace-Framework/discussions)
 

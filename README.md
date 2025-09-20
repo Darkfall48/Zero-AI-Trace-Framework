@@ -47,10 +47,33 @@ This framework merges accuracy protocols with **style discipline**, designed for
 - 🛠️ **Built-in correction protocols**
 - 📦 **Compact format** for system injection
 - 🔧 **Compatible** with all major LLMs
+- 🧪 **Automated testing** and validation
+- 🚀 **Professional CLI** with multiple commands
+- 📚 **Comprehensive documentation** and guides
+- 🎯 **Multiple prompt variants** for different use cases
+- 🔗 **Integration templates** for popular platforms
 
 ## 🚀 Installation
 
-### Method 1: Direct Injection (Recommended)
+### Method 1: NPM Package (Recommended for Developers)
+
+```bash
+# Install globally for CLI access
+npm install -g zero-ai-trace-framework
+
+# Or install locally for project integration
+npm install zero-ai-trace-framework
+```
+
+### Method 2: Direct Clone
+
+```bash
+git clone https://github.com/Darkfall48/Zero-AI-Trace-Framework.git
+cd Zero-AI-Trace-Framework
+npm install
+```
+
+### Method 3: Direct Injection
 
 Copy and paste the following compact prompt into your ChatGPT or LLM interface:
 
@@ -58,25 +81,32 @@ Copy and paste the following compact prompt into your ChatGPT or LLM interface:
 Be honest, not agreeable. Never present speculation as fact. If unverifiable, say: "I cannot verify this," "I do not have access to that information," or "My knowledge base does not contain that." Prefix uncertain content with [Inference], [Speculation], or [Unverified], and if any part is unverified, label the whole response. Do not paraphrase input unless asked. Claims with words like Prevent, Guarantee, Will never, Fixes, Eliminates, Ensures must be labeled. LLM behavior claims must carry [Inference] or [Unverified] and include "based on observed patterns." If labeling is missed, issue a correction. Always ask if context is missing; never fabricate. Style must avoid puffery, stock phrasing, or sterile AI polish. Use concrete facts, natural flow, varied sentence rhythm, and allow slight irregularities: contractions, mild subjectivity, human hedging, and uneven lengths. Break symmetry to avoid AI fingerprints. If both labeling is missed and AI-sounding filler appears, issue dual corrections: one for labeling, one for style.
 ```
 
-### Method 2: System Configuration
+### Method 4: System Configuration
 
 For permanent integration, add the framework to your system prompts or API configurations.
-
-### Method 3: Repository Clone
-
-```bash
-git clone https://github.com/Darkfall48/Zero-AI-Trace-Framework.git
-cd Zero-AI-Trace-Framework
-```
 
 ## ⚡ Quick Start
 
 ### Basic Usage
 
-1. **Inject the prompt** into your LLM
-2. **Test with an uncertain question**: "What will the weather be tomorrow?"
-3. **Check the response**: should contain `[Unverified]` or "I cannot verify"
-4. **Observe the style**: more natural, less "AI-like"
+1. **Install the framework**: `npm install -g zero-ai-trace-framework`
+2. **Validate setup**: `zero-ai-trace validate`
+3. **Get the prompt**: `zero-ai-trace show`
+4. **Inject into your LLM** or use API integration
+5. **Test with uncertain question**: "What will the weather be tomorrow?"
+6. **Check the response**: should contain `[Unverified]` or "I cannot verify"
+7. **Observe the style**: more natural, less "AI-like"
+
+### CLI Commands
+
+```bash
+zero-ai-trace validate    # Validate framework setup
+zero-ai-trace show        # Display current prompt
+zero-ai-trace test        # Run automated tests
+zero-ai-trace build       # Generate variants and templates
+zero-ai-trace init <name> # Create new project
+zero-ai-trace info        # Show framework information
+```
 
 ### Quick Validation
 
@@ -262,6 +292,46 @@ Here's the condensed version to copy-paste directly:
 ```markdown
 Be honest, not agreeable. Never present speculation as fact. If unverifiable, say: "I cannot verify this," "I do not have access to that information," or "My knowledge base does not contain that." Prefix uncertain content with [Inference], [Speculation], or [Unverified], and if any part is unverified, label the whole response. Do not paraphrase input unless asked. Claims with words like Prevent, Guarantee, Will never, Fixes, Eliminates, Ensures must be labeled. LLM behavior claims must carry [Inference] or [Unverified] and include "based on observed patterns." If labeling is missed, issue a correction. Always ask if context is missing; never fabricate. Style must avoid puffery, stock phrasing, or sterile AI polish. Use concrete facts, natural flow, varied sentence rhythm, and allow slight irregularities: contractions, mild subjectivity, human hedging, and uneven lengths. Break symmetry to avoid AI fingerprints. If both labeling is missed and AI-sounding filler appears, issue dual corrections: one for labeling, one for style.
 ```
+
+## 🛠️ Developer Tools
+
+### Available Scripts
+
+```bash
+npm test              # Run automated test suite
+npm run validate      # Validate framework configuration
+npm run build         # Generate prompt variants and templates
+npm run lint          # Check code quality
+npm run format        # Format code according to style guide
+```
+
+### Project Structure
+
+```
+Zero-AI-Trace-Framework/
+├── 📁 bin/               # CLI executable
+├── 📁 docs/              # Comprehensive documentation
+│   ├── advanced-guide.md    # Advanced optimization techniques
+│   ├── tutorial.md          # Step-by-step tutorial
+│   └── integration-examples.md # Real-world integrations
+├── 📁 dist/              # Generated builds and variants
+├── 📁 scripts/           # Build and validation scripts
+├── 📁 src/               # Core framework code
+├── 📁 templates/         # Integration templates and snippets
+├── 📁 tests/             # Automated test suite
+└── 📁 .vscode/           # VS Code configuration
+```
+
+### Prompt Variants
+
+The build system generates specialized variants:
+
+- **core.txt**: Full framework (1040 characters)
+- **short.txt**: Compressed version (189 characters)
+- **academic.txt**: Research and citation focused
+- **technical.txt**: Implementation and precision focused
+- **creative.txt**: Creative writing optimized
+- **casual.txt**: Conversational and natural
 
 ## 🤝 Contributing
 
